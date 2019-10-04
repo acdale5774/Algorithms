@@ -1,0 +1,14 @@
+(* How to rotate an array by K *)
+
+let rotate1 l =
+    match l with
+    [] -> []
+    | h::t -> t @ [h];;
+
+let rec rotate l i k =
+    match l with
+    [] -> []
+    | h::t -> if (i = k) then l
+              else
+                  rotate (rotate1 l) (i+1) k;;
+
